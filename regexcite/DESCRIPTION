@@ -1,0 +1,14 @@
+Package: regexcite
+Title: FDPS Data Gathering
+Version: 0.0.0.9000
+Authors@R: 
+    person("Aymane", "Omari", , "aymane.omari@nyu.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "..."))
+Description: In the context of my research assistantship with Dr. Kaufman, I created this open access tool for researchers which allows to scrape any given URL in the FPDS website. This is especially useful to gather data for advanced searches on the website.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    rvest
