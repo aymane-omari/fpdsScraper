@@ -1,9 +1,9 @@
 #' Scrape FPDS Data from URL
 #'
-#' This function scrapes data from the provided FPDS URL.
+#' This function serves as your trusty companion in the quest for FPDS data! Armed with a provided FPDS URL, this function fearlessly ventures into the web, scraping and gathering valuable contract information. It's your key to unlocking the treasures hidden within the vast FPDS landscape. 🌐✨
 #'
-#' @param url The URL from which to scrape data.
-#' @return A data frame containing the scraped data.
+#' @param url The URL from which to scrape data. Feed it the FPDS URL, and let the magic unfold!
+#' @return A glorious data frame containing the meticulously scraped data. Each row is a nugget of information, including Contracting Agency, Action Obligation, Legal Business Name, PSC Code, NAICS Code, Entity State, Unique Entity ID, and Award ID. 📊💼
 #' @export
 scrape_fpds_data <- function(url) {
   # Check if the URL exists

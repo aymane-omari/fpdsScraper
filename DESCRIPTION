@@ -1,10 +1,10 @@
 Package: fpdsScraper
-Title: FDPS Data Gathering
+Title: FPDS Data Scraper
 Version: 0.0.0.9000
 Authors@R: 
     person("Aymane", "Omari", , "aymane.omari@nyu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "..."))
-Description: In the context of my research assistantship with Dr. Kaufman, I created this open access tool for researchers which allows to scrape any given URL in the FPDS website. This is especially useful to gather data for advanced searches on the website.
+Description: A powerful and open-access tool crafted during my research assistantship with Dr. Kaufman, the FPDS Data Scraper empowers researchers to effortlessly extract valuable contract information from the Federal Procurement Data System (FPDS) website. This tool is specifically designed to facilitate data gathering for advanced searches, providing researchers with a seamless and efficient solution for navigating and retrieving targeted information from the expansive FPDS repository.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
