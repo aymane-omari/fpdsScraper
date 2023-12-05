@@ -87,6 +87,7 @@ scrape_fpds_data <- function(url) {
 #'
 #' @param url The URL to check.
 #' @return TRUE if the URL exists, FALSE otherwise.
+#' @export
 url_exists <- function(url) {
   response <- httr::GET(url)
   return(httr::status_code(response) == 200)
@@ -98,6 +99,7 @@ url_exists <- function(url) {
 #'
 #' @param text The text to be cleaned.
 #' @return Cleaned text.
+#' @export
 # Load necessary libraries
 library(rvest)
 library(dplyr)
@@ -126,6 +128,7 @@ get_total_pages <- function(url) {
 #'
 #' @param url The URL for the page.
 #' @return A data frame containing the scraped data from all pages.
+#' @export
 scrape_data_from_all_pages <- function(url) {
   # Check if the URL exists
   if (!url_exists(url)) {
