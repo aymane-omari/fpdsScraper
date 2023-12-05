@@ -6,6 +6,11 @@
 #' @return A data frame containing the scraped data.
 #' @export
 scrape_fpds_data <- function(url) {
+  # Check if the URL exists
+  if (!url_exists(url)) {
+    stop("The provided URL does not exist.")
+  }
+
   webpage <- read_html(url)
 
   # Initialize data frame to store results
@@ -76,6 +81,16 @@ scrape_fpds_data <- function(url) {
 
   return(results)
 }
+#' Check if URL exists
+#'
+#' This function checks if the given URL exists.
+#'
+#' @param url The URL to check.
+#' @return TRUE if the URL exists, FALSE otherwise.
+url_exists <- function(url) {
+  response <- httr::GET(url)
+  return(httr::status_code(response) == 200)
+}
 
 #' Clean Text
 #'
@@ -110,9 +125,12 @@ get_total_pages <- function(url) {
 #' This function scrapes data from all pages.
 #'
 #' @param url The URL for the page.
-#' @param search_term The search term.
 #' @return A data frame containing the scraped data from all pages.
-scrape_data_from_all_pages <- function(url, search_term) {
+scrape_data_from_all_pages <- function(url) {
+  # Check if the URL exists
+  if (!url_exists(url)) {
+    stop("The provided URL does not exist.")
+  }
   num_pages <- get_total_pages(url)
   all_results <- data.frame()
   for (page in 1:num_pages) {
