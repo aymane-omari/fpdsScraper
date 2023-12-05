@@ -100,10 +100,6 @@ url_exists <- function(url) {
 #' @param text The text to be cleaned.
 #' @return Cleaned text.
 #' @export
-# Load necessary libraries
-library(rvest)
-library(dplyr)
-
 clean_text <- function(text) {
   cleaned_text <- gsub("[\t\n$]", "", text)
   return(trimws(cleaned_text))
