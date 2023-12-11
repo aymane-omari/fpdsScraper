@@ -36,40 +36,6 @@ fpds_data <- scrape_fpds_data("your_url_here")
 head(fpds_data)
 ```
 
-### `url_exists(url)`
-
-Before diving into scraping, it's crucial to ensure the URL is valid. This function checks if the provided URL exists, safeguarding your data extraction journey. 🛡️
-
-#### Parameters
-- `url`: The URL to check.
-
-#### Returns
-- TRUE if the URL exists, FALSE otherwise.
-
-### Example
-
-```r
-# Replace 'your_url_here' with the URL to check
-url_status <- url_exists("your_url_here")
-
-# Check the status
-if (url_status) {
-  print("The URL exists. Ready to scrape!")
-} else {
-  stop("The provided URL does not exist.")
-}
-```
-
-### `clean_text(text)`
-
-Cleanliness is next to godliness! This function tidies up text, eliminating unnecessary characters and whitespaces, ensuring your data is pristine and ready for analysis. 🧹
-
-#### Parameters
-- `text`: The text to be cleaned.
-
-#### Returns
-- Cleaned text.
-
 ### `get_total_pages(url)`
 
 Curious about the total number of pages? This function calculates it for you, offering insights into the scope of your data extraction mission. 📚
