@@ -11,6 +11,11 @@ scrape_fpds_data <- function(url) {
     stop("The provided URL does not exist.")
   }
 
+  # Verify if the URL is standard according to FPDS
+  if (!verify_fpds_url(url)) {
+    stop("The provided URL is not a standard FPDS URL.")
+  }
+
   webpage <- read_html(url)
 
   # Initialize data frame to store results
@@ -93,6 +98,20 @@ url_exists <- function(url) {
   return(httr::status_code(response) == 200)
 }
 
+#' Verify FPDS URL
+#'
+#' This function verifies if the given URL is a standard FPDS URL.
+#'
+#' @param url The URL to verify.
+#' @return TRUE if the URL is standard according to FPDS, FALSE otherwise.
+#' @export
+verify_fpds_url <- function(url) {
+  required_params <- c("indexName=awardfull", "templateName=1.5.3", "s=FPDS.GOV")
+  has_required_params <- all(sapply(required_params, function(param) grepl(param, url)))
+  return(has_required_params)
+}
+
+
 #' Clean Text
 #'
 #' This function cleans the text.
@@ -130,6 +149,12 @@ scrape_data_from_all_pages <- function(url) {
   if (!url_exists(url)) {
     stop("The provided URL does not exist.")
   }
+
+  # Verify if the URL is standard according to FPDS
+  if (!verify_fpds_url(url)) {
+    stop("The provided URL is not a standard FPDS URL.")
+  }
+
   num_pages <- get_total_pages(url)
   all_results <- data.frame()
   for (page in 1:num_pages) {
