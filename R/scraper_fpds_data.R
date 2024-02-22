@@ -16,7 +16,7 @@ scrape_fpds_data <- function(url) {
     stop("The provided URL is not a standard FPDS URL.")
   }
 
-  webpage <- read_html(url)
+  webpage <- textreadr::read_html(url)
 
   # Initialize data frame to store results
   results <- data.frame(Contracting_Agency = character(0), Action_Obligation = character(0),
