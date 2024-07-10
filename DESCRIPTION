@@ -1,18 +1,21 @@
 Package: fpdsScraper
 Title: FPDS Data Scraper
-Version: 0.0.0.9000
+Version: 1.0.0.0002
 Authors@R: 
     person("Aymane", "Omari", , "aymane.omari@nyu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "..."))
+Author: Aymane Omari [aut,cre]
+Maintainer: Aymane Omari  <aymane.omari@nyu.edu>
 Description: A powerful and open-access tool crafted during my research assistantship with Dr. Kaufman, the FPDS Data Scraper empowers researchers to effortlessly extract valuable contract information from the Federal Procurement Data System (FPDS) website. This tool is specifically designed to facilitate data gathering for advanced searches, providing researchers with a seamless and efficient solution for navigating and retrieving targeted information from the expansive FPDS repository.
 License: MIT + file LICENSE
 Encoding: UTF-8
+URL: https://www.r-project.org, https://github.com/aymane-omari/fpdsScraper/
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     dplyr,
-    rvest,
-    textreadr
+    httr,
+    rvest
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

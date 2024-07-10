@@ -13,5 +13,5 @@ scrape_fpds_data(url)
 A data frame containing the scraped data.
 }
 \description{
-This function scrapes data from the provided FPDS URL.
+This function scrapes data from the FPDS website based on a provided URL.
 }

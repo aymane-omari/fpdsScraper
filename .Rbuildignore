@@ -1,3 +1,2 @@
-^regexcite\.Rproj$
+^.*\.Rproj$
 ^\.Rproj\.user$
-^LICENSE\.md$
