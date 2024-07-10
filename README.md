@@ -8,15 +8,37 @@ This R package provides a set of functions designed to streamline the process of
 
 ## Getting Started
 
-You will have to get your FPDS scraper url first, depending on your searches. You can follow the steps given in the PDF document 'How to get your FDPS URL'.
+You will have to get your FPDS scraper URL first, depending on your searches. You can follow the steps given in the PDF document 'How to get your FDPS URL'.
 
 ## Functions
 
 Below is an overview of the functions you can use after downloading this package.
 
+### `scrape_data_fpds(url)`
+
+This function is the heart of the operation! It seamlessly scrapes data from every page of the specified FPDS URL, providing a comprehensive data frame that covers the entire spectrum of contracts. 🚚
+
+#### Parameters
+- `url`: The URL from which to scrape data.
+
+#### Returns
+- A data frame containing the scraped data from all pages, including Contracting Agency, Action Obligation, Legal Business Name, PSC Code, NAICS Code, Entity State, Unique Entity ID, and Award ID.
+
+### Example
+
+```r
+library(fpdsScraper)
+
+# Replace 'your_url_here' with the actual FPDS URL
+all_fpds_data <- scrape_data_fpds("your_url_here")
+
+# View the first few rows of the complete dataset
+head(all_fpds_data)
+```
+
 ### `scrape_fpds_data(url)`
 
-This function is the heart of the operation! It meticulously scrapes data from the specified FPDS URL and returns a tidy data frame with essential contract details. 📊
+This function scrapes data from a single page of the specified FPDS URL and returns a tidy data frame with essential contract details. 📊
 
 #### Parameters
 - `url`: The URL from which to scrape data.
@@ -27,7 +49,7 @@ This function is the heart of the operation! It meticulously scrapes data from t
 ### Example
 
 ```r
-library(fpds_data_scraper)
+library(fpdsScraper)
 
 # Replace 'your_url_here' with the actual FPDS URL
 fpds_data <- scrape_fpds_data("your_url_here")
@@ -46,22 +68,80 @@ Curious about the total number of pages? This function calculates it for you, of
 #### Returns
 - The total number of pages.
 
-### `scrape_data_from_all_pages(url)`
+### Example
 
-Ready to conquer all pages? This function seamlessly scrapes data from every page of the FPDS website, providing a comprehensive data frame that covers the entire spectrum of contracts. 🚚
+```r
+library(fpdsScraper)
+
+# Replace 'your_url_here' with the actual FPDS URL
+total_pages <- get_total_pages("your_url_here")
+
+# Print the total number of pages
+print(total_pages)
+```
+
+### `url_exists(url)`
+
+Check if the given URL exists before attempting to scrape data.
 
 #### Parameters
-- `url`: The URL for the page.
+- `url`: The URL to check.
 
 #### Returns
-- A data frame containing the scraped data from all pages.
+- `TRUE` if the URL exists, `FALSE` otherwise.
 
 ### Example
 
 ```r
-# Replace 'your_url_here' with the URL to scrape all pages
-all_fpds_data <- scrape_data_from_all_pages("your_url_here")
+library(fpdsScraper)
 
-# View the first few rows of the complete dataset
-head(all_fpds_data)
+# Replace 'your_url_here' with the actual FPDS URL
+url_valid <- url_exists("your_url_here")
+
+# Print if the URL is valid
+print(url_valid)
+```
+
+### `verify_fpds_url(url)`
+
+Verify if the given URL is a standard FPDS URL.
+
+#### Parameters
+- `url`: The URL to verify.
+
+#### Returns
+- `TRUE` if the URL is standard according to FPDS, `FALSE` otherwise.
+
+### Example
+
+```r
+library(fpdsScraper)
+
+# Replace 'your_url_here' with the actual FPDS URL
+is_valid_fpds_url <- verify_fpds_url("your_url_here")
+
+# Print if the URL is a valid FPDS URL
+print(is_valid_fpds_url)
+```
+
+### `clean_text(text)`
+
+Clean the text by removing unwanted characters and trimming whitespace.
+
+#### Parameters
+- `text`: The text to be cleaned.
+
+#### Returns
+- Cleaned text.
+
+### Example
+
+```r
+library(fpdsScraper)
+
+# Replace 'your_text_here' with the text you want to clean
+cleaned_text <- clean_text("your_text_here")
+
+# Print the cleaned text
+print(cleaned_text)
 ```
