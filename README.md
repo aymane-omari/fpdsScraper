@@ -1,7 +1,4 @@
-# 🚀 FPDS Data Scraper 🕵️‍♂️
-
-Welcome to the FPDS Data Scraper, your go-to tool for effortlessly extracting contract information from the Federal Procurement Data System (FPDS) website! 🌐
-
+# FPDS Data Scraper
 ## Overview
 
 This R package provides a set of functions designed to streamline the process of retrieving, organizing, and cleaning FPDS data from a given URL. Whether you're an analyst, researcher, or data enthusiast, this package is tailored to simplify your data extraction needs.
@@ -16,7 +13,7 @@ Below is an overview of the functions you can use after downloading this package
 
 ### `scrape_data_fpds(url)`
 
-This function is the heart of the operation! It seamlessly scrapes data from every page of the specified FPDS URL, providing a comprehensive data frame that covers the entire spectrum of contracts. 🚚
+This function scrapes data from every page of the specified FPDS URL.
 
 #### Parameters
 - `url`: The URL from which to scrape data.
@@ -38,7 +35,7 @@ head(all_fpds_data)
 
 ### `scrape_fpds_data(url)`
 
-This function scrapes data from a single page of the specified FPDS URL and returns a tidy data frame with essential contract details. 📊
+This function scrapes data from a single page of the specified FPDS URL.
 
 #### Parameters
 - `url`: The URL from which to scrape data.
@@ -60,13 +57,7 @@ head(fpds_data)
 
 ### `get_total_pages(url)`
 
-Curious about the total number of pages? This function calculates it for you, offering insights into the scope of your data extraction mission. 📚
-
-#### Parameters
-- `url`: The URL for the page.
-
-#### Returns
-- The total number of pages.
+This function calculates the total number of pages in the URL.
 
 ### Example
 
